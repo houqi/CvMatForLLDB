@@ -217,6 +217,8 @@ def showImage(debugger, matInfo):
     data = str(matInfo['name']) + " = double\\(imread\\("+"\\'" + imageFolder + "\\'" + "\\)\\) \\/ 255.0\\; figure\\(\\)\\; imshow\\(" + str(matInfo['name']) + "\\)\\; system\\(\\'find " + TEMP_FOLDER + " -mtime +1 -delete  \\'\\)\\;"
     os.system("echo " + data.strip() + " | pbcopy")
 
+    if not os.path.exists(TEMP_FOLDER):
+        os.mkdir(TEMP_FOLDER)
     img.save(imageFolder)
     print imageFolder
     #call(["open", imageFolder])
