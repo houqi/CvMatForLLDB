@@ -145,6 +145,9 @@ def showImage(debugger, matInfo):
     line_step = matInfo['line_step']
     data_address = matInfo['data_address']
 
+    if width == 0 | height == 0:
+        return
+
     # Read the memory location of the data of the Mat.
     error = lldb.SBError()
     memory_data = process.ReadMemory(data_address, line_step * height, error)
