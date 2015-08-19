@@ -221,4 +221,4 @@ def showImage(debugger, matInfo):
         os.mkdir(TEMP_FOLDER)
     img.save(imageFolder)
     print imageFolder
-    #call(["open", imageFolder])
+    os.system("python " + expanduser("~") + "/lldb/iw_visualizer.py " + imageFolder)
