@@ -47,7 +47,7 @@ for r in range(0, size[0]):
     for c in range(0, size[1]):
         if (img[r, c, 0] != img[r, c, 1] or img[r, c, 0] != img[r, c, 2]):
             grayScale = False
-grayScale = False
+
 scale = SCALE_MIN
 xMap = np.zeros(size, dtype=np.float32)
 for r in range(0, size[0]):
